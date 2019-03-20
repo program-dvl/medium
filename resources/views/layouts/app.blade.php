@@ -13,12 +13,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href="{{ asset('css/redactor.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-tokenfield.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/tokenfield-typeahead.css') }}" rel="stylesheet">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <script src="../../../node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
-    <link rel="stylesheet" href="../../../node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
+    
 </head>
 <body>
     <div id="app">
@@ -33,9 +33,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <!-- <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="{{ url('/admin/posts') }}">Posts</a></li>
-                    </ul>
+                    </ul> -->
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -75,6 +75,16 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/alignment.js') }}"></script>
+    <script src="{{ asset('js/fontcolor.js') }}"></script>
+    <script src="{{ asset('js/fontsize.js') }}"></script>
+    <script src="{{ asset('js/fullscreen.js') }}"></script>
+    <script src="{{ asset('js/inlinestyle.js') }}"></script>
+    <script src="{{ asset('js/redactor.js') }}"></script>
+    <script src="{{ asset('js/source.js') }}"></script>
+    <script src="{{ asset('js/table.js') }}"></script>
+    <script src="{{ asset('js/video.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-tokenfield.js') }}"></script>
 
 </body>
 </html>

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Validator;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PostsController extends Controller
 {
@@ -49,6 +51,17 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/posts/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
         $requestData = $request->all();
         
         Post::create($requestData);
@@ -94,7 +107,17 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/posts/'.$id.'/edit')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
         $requestData = $request->all();
         
         $post = Post::findOrFail($id);
@@ -115,5 +138,17 @@ class PostsController extends Controller
         Post::destroy($id);
 
         return redirect('admin/posts')->with('flash_message', 'Post deleted!');
+    }
+
+    public function uploadImagege(Request $request){
+        
+        $file = $request->file('file');
+        $extension = $file->getClientOriginalExtension();
+        Storage::disk('public')->put($file->getClientOriginalName().'.'.$extension,  File::get($file));
+        $array = array(
+            'url' => (url('storage').'/'.$file->getClientOriginalName().'.'.$extension),
+            'id'  => 123
+        );
+        echo stripslashes(json_encode($array));
     }
 }
