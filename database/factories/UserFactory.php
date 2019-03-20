@@ -15,12 +15,38 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
-    ];
-});
+	$factory->define(App\Post::class, function (Faker $faker) {
+		$title = $faker->name;
+	    return [
+	        'title' => $title,
+	        'body' => $faker->text,
+	        'slug' => slugify($title)
+	    ];
+	});	
+
+	function slugify($text)
+	{
+	  // replace non letter or digits by -
+	  $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+	  // transliterate
+	  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+	  // remove unwanted characters
+	  $text = preg_replace('~[^-\w]+~', '', $text);
+
+	  // trim
+	  $text = trim($text, '-');
+
+	  // remove duplicate -
+	  $text = preg_replace('~-+~', '-', $text);
+
+	  // lowercase
+	  $text = strtolower($text);
+
+	  if (empty($text)) {
+	    return 'n-a';
+	  }
+
+	  return $text;
+	}
