@@ -144,9 +144,9 @@ class PostsController extends Controller
         
         $file = $request->file('file');
         $extension = $file->getClientOriginalExtension();
-        Storage::disk('public')->put($file->getClientOriginalName().'.'.$extension,  File::get($file));
+        Storage::disk('public')->put($file->getClientOriginalName(),  File::get($file));
         $array = array(
-            'url' => (url('storage').'/'.$file->getClientOriginalName()),
+            'url' => (asset('storage').'/'.$file->getClientOriginalName()),
             'id'  => 123
         );
         echo stripslashes(json_encode($array));
