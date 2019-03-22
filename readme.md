@@ -1,9 +1,14 @@
 # Project Setup
  1.)  Clone this repo.
+ 
  2.) ``` composer install ```
+ 
  3.) configure the .env file for database name, username and password.
+ 
  4.) ``` php artisan storage:link ```
+ 
  5.) ``` php artisan serve ```
+ 
  6.) ``` php artisan db:seed ```
  
  # Project URL
