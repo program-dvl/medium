@@ -17,6 +17,7 @@
     ###### Credentials for admin user:
 
     1.) Email : mindvalley@admin.com
+    
     2.) Password : 12345678
  
  # Features of the projects
