@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -19,13 +20,27 @@ class Post extends Model
     * @var string
     */
     protected $primaryKey = 'id';
-
+    
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
+
     protected $fillable = ['title', 'body','slug','tags'];
 
+    public function getImageAttribute(){
+        preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $this->body, $image);
+        return (!empty($image['src'])) ? $image['src'] : 'https://source.unsplash.com/collection/225/800x600';
+    }
+
+    public function getTextAttribute(){
+        return substr(strip_tags($this->body),0,100).'...';
+    }
+
+    public function getPublishedDateAttribute(){
+        $date = Carbon::parse($this->created_at, 'UTC');
+        return $date->isoFormat('Do MMM YY');
+    }
     
 }

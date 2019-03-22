@@ -136,7 +136,6 @@ class PostsController extends Controller
     public function destroy($id)
     {
         Post::destroy($id);
-
         return redirect('admin/posts')->with('flash_message', 'Post deleted!');
     }
 
@@ -150,5 +149,18 @@ class PostsController extends Controller
             'id'  => 123
         );
         echo stripslashes(json_encode($array));
+
+    }
+
+    public function getPosts()
+    {
+        $posts = Post::all();
+        return view('frontend.index')->with('posts',$posts);
+    }
+
+    public function getPost($slug)
+    {
+        $post = Post::where('slug',$slug)->first();
+        return view('frontend.detail')->with('post',$post);
     }
 }

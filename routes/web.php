@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
 
 
-
-
+Route::get('/', 'PostsController@getPosts');
+Route::get('{slug}', 'PostsController@getPost');
 
 Route::prefix('admin')->group(function () {
     Auth::routes();
