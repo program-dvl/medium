@@ -17,8 +17,6 @@
 
 
 Route::get('/', 'PostsController@getPosts');
-Route::get('{slug}', 'PostsController@getPost');
-
 Route::prefix('admin')->group(function () {
     Auth::routes();
     Route::group(['middleware' => ['auth']], function () {
@@ -27,3 +25,4 @@ Route::prefix('admin')->group(function () {
     	Route::post('imageUpload','PostsController@uploadImagege');
 	});
 });
+Route::get('{slug}', 'PostsController@getPost');

@@ -1,7 +1,7 @@
 @extends('frontend.header')
 
 @section('content')
-    <div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('{{url('images/background.jpg')}}'); height: 60vh; max-height:460px;">
+    <div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-color: black; height: 60vh; max-height:460px;">
 		<div class="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
 			<p class="text-white font-extrabold text-3xl md:text-5xl">
 				Medium
