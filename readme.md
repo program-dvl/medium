@@ -3,13 +3,15 @@
  
  2.) ``` composer install ```
  
- 3.) create .env file and configure the .env file for database name, username and password.
+ 3.) ```  php artisan key:generate ```
  
- 4.) ``` php artisan storage:link ```
+ 4.) create .env file and configure the .env file for database name, username and password.
+ 
+ 5.) ``` php artisan storage:link ```
 
- 5.) ``` php artisan db:seed ```
+ 6.) ``` php artisan db:seed ```
 
- 6.) ``` php artisan serve ```
+ 7.) ``` php artisan serve ```
  
  
  # Project URL
