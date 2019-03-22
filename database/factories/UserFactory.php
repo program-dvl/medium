@@ -14,6 +14,13 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
+	$factory->define(App\User::class, function (Faker $faker) {
+	    return [
+	        'name' => 'admin',
+	        'email' => 'mindvalley@admin.com',
+	        'password' => '$2y$10$IhLGW5lclsoml3EB5JWly.PjQqACld371ikbSregp0B35aPPh8I4C',
+	    ];
+	});
 
 	$factory->define(App\Post::class, function (Faker $faker) {
 		$title = $faker->name;
