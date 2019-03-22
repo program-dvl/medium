@@ -19,7 +19,7 @@ use Faker\Generator as Faker;
 		$title = $faker->name;
 	    return [
 	        'title' => $title,
-	        'body' => $faker->text,
+	        'body' => $faker->randomHtml(6,10),
 	        'slug' => slugify($title)
 	    ];
 	});	

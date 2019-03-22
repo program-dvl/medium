@@ -31,7 +31,7 @@ class Post extends Model
 
     public function getImageAttribute(){
         preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $this->body, $image);
-        return (!empty($image['src'])) ? $image['src'] : 'https://source.unsplash.com/collection/225/800x600';
+        return (!empty($image['src'])) ? $image['src'] : url('images/no-image.jpg');
     }
 
     public function getTextAttribute(){
