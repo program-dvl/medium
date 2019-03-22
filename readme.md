@@ -6,10 +6,11 @@
  3.) configure the .env file for database name, username and password.
  
  4.) ``` php artisan storage:link ```
+
+ 5.) ``` php artisan db:seed ```
+
+ 6.) ``` php artisan serve ```
  
- 5.) ``` php artisan serve ```
- 
- 6.) ``` php artisan db:seed ```
  
  # Project URL
  - Frontend : http://127.0.0.1:8000/
