@@ -3,7 +3,7 @@
  
  2.) ``` composer install ```
  
- 3.) configure the .env file for database name, username and password.
+ 3.) create .env file and configure the .env file for database name, username and password.
  
  4.) ``` php artisan storage:link ```
 
