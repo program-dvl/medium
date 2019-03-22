@@ -42,5 +42,9 @@ class Post extends Model
         $date = Carbon::parse($this->created_at, 'UTC');
         return $date->isoFormat('Do MMM YY');
     }
+
+    public function getReadTimeAttribute(){
+        return floor(strlen(strip_tags($this->body))/256);
+    }
     
 }

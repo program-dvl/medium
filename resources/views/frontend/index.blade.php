@@ -14,17 +14,22 @@
 				<div class="flex flex-wrap justify-between -mx-6">
 					@foreach ($posts as $post)
 					    <div class="w-full md:w-1/3 p-1 flex-col flex-grow flex-shrink">
-						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-							<a href="{{url($post->slug)}}" class="flex flex-wrap no-underline hover:no-underline">
-								<img src="{{$post->image}}" class="h-64 w-full rounded-t pb-6">
-								<p class="w-full text-grey-dark text-xs md:text-sm px-6">{{$post->tags}}</p>
-								<div class="w-full font-bold text-xl text-black px-6">{{$post->title}}</div>
-								<p class="text-grey-darkest font-serif text-base px-6 mb-5">
-									{{$post->text}}
-								</p>
-							</a>
+							<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+								<a href="{{url($post->slug)}}" class="flex flex-wrap no-underline hover:no-underline">
+									<img src="{{$post->image}}" class="h-64 w-full rounded-t pb-6">
+									<p class="w-full text-grey-dark text-xs md:text-sm px-6">{{$post->tags}}</p>
+									<div class="w-full font-bold text-xl text-black px-6">{{$post->title}}</div>
+									<p class="text-grey-darkest font-serif text-base px-6 mb-5">
+										{{$post->text}}
+									</p>
+								</a>
+							</div>
+							<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+								<div class="flex items-center justify-between">
+									<p class="text-grey-dark text-xs md:text-sm">{{ $post->read_time }} MIN READ</p>
+								</div>
+							</div>
 						</div>
-					</div>
 					@endforeach	
 				</div>
 			</div>
