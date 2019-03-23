@@ -1,10 +1,20 @@
 # Project Setup
  1.)  Clone this repo.
+ 
  2.) ``` composer install ```
- 3.) configure the .env file for database name, username and password.
- 4.) ``` php artisan storage:link ```
- 5.) ``` php artisan serve ```
- 6.) ``` php artisan db:seed ```
+ 
+ 3.)  create .env file and configure the .env file for database name, username and password.
+ 
+ 4.) ```  php artisan key:generate ```
+ 
+ 5.) ``` php artisan storage:link ```
+ 
+ 6.) ``` php artisan migrate ```
+
+ 7.) ``` php artisan db:seed ```
+
+ 8.) ``` php artisan serve ```
+ 
  
  # Project URL
  - Frontend : http://127.0.0.1:8000/
@@ -12,6 +22,7 @@
     ###### Credentials for admin user:
 
     1.) Email : mindvalley@admin.com
+    
     2.) Password : 12345678
  
  # Features of the projects
