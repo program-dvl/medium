@@ -33,6 +33,6 @@
  - Frontend to list and display articles.
  - Calculate read time as medium.com according to 256 word/Minute.
  
- **Note :** Faker has been used to generate one user for admin panel and 10 dummy aricles with random html as body of articles. Initially it will show Image ( no image ) in article listing. but at admin side we have feature to add multiple images in redactor and first image will be used in blog listing. 
+ **Note :** Faker has been used to generate one user for admin panel and 10 dummy articles with random html as body of articles. Initially it will show Image ( no image ) in article listing. but at admin side we have feature to add multiple images in redactor and first image will be used in blog listing. 
  
 
