@@ -162,6 +162,11 @@ class PostsController extends Controller
     public function getPost($slug)
     {
         $post = Post::where('slug',$slug)->first();
-        return view('frontend.detail')->with('post',$post);
+        if(!empty($post)){
+            return view('frontend.detail')->with('post',$post);
+        }else{
+            return view('layouts.404');
+        }
+        
     }
 }
