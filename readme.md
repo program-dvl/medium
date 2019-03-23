@@ -8,10 +8,12 @@
  4.) ```  php artisan key:generate ```
  
  5.) ``` php artisan storage:link ```
+ 
+ 6.) ``` php artisan migrate ```
 
- 6.) ``` php artisan db:seed ```
+ 7.) ``` php artisan db:seed ```
 
- 7.) ``` php artisan serve ```
+ 8.) ``` php artisan serve ```
  
  
  # Project URL
